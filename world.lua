@@ -1,10 +1,13 @@
-local world = {}
+local world = {
+    actors = {},
+    objects = {},
+    physicsWorld = love.physics.newWorld(0, 0, true)
+}
 
 function world.Load()
-    love.physics.setMeter(64)                              -- Define the size of a meter in pixels
-    world.physicsWorld = love.physics.newWorld(0, 0, true) -- Create a new physics world with no gravity
+    love.physics.setMeter(64)
+    world.physicsWorld = love.physics.newWorld(0, 0, true)
 
-    world.objects = {}
     for i = 1, 10 do
         local shapeType = math.random(1, 2) == 1 and "circle" or "square"
         local size = math.random(20, 50)
