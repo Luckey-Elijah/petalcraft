@@ -1,7 +1,8 @@
+local lick = require("lick")
 local gridSize = 50
-
 local rect = { x = 100, y = 100, width = 50, height = 50, dragging = false }
 local snapSpeed = 10
+lick.reset = true -- reload love.load every time you save
 
 local function drawGrid()
     love.graphics.setColor(0.8, 0.8, 0.8)
